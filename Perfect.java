@@ -16,7 +16,6 @@ public class Perfect {
 		}
 
 	if(perfect == sum){
-		System.out.println("perfect");
 		System.out.println(s);
 
 	}
