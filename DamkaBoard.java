@@ -9,6 +9,9 @@ public class DamkaBoard {
 				if(i%2==1&&j==0){
 				System.out.print(" * ");
 				}
+				else if(i%2==1 && j==n-1){
+				System.out.print("*");
+				}
 				else {
 				System.out.print("* ");
 				}
