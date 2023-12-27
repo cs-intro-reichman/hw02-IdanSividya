@@ -14,16 +14,55 @@ public class OneOfEachStats {
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
+			double average;
+		int Sum2Children = 0;
+		int Sum3Children = 0;
+		int Sum4andmoreChildren = 0;
+		double all = 0;
+		for	(int i = 0;i < T; i++)
+		{
+			int children = 0;
+			boolean boy = false;
+			boolean girl = false;
+			
+			while(!boy || !girl){
+				children = children + 1;
+				all = all+1;
+				double random = generator.nextDouble();
+				if(random<0.5){
+				girl = true;
+				}
+				else{
+				boy = true;
+				}
+			}
+			
+		if (children == 2){
+		Sum2Children = Sum2Children + 1;
+		}
+		else if (children == 3){
+		Sum3Children = Sum3Children + 1;
+		}
+		else {
+		Sum4andmoreChildren = Sum4andmoreChildren+ 1;
+		}
+		}
+		int common = Math.max(Sum2Children, Math.max(Sum3Children, Sum4andmoreChildren));
+		average = all/T;
+		System.out.println("Average: " + average + " children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children: " +Sum2Children);		
+		System.out.println("Number of families with 3 children: " +Sum3Children);
+		System.out.println("Number of families with 4 or more children: " +Sum4andmoreChildren);		
 		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
+		if(Sum2Children >= Sum3Children && Sum2Children >= Sum4andmoreChildren){
+			System.out.println("The most common number of children is 2.");
+		}
+		else if (Sum3Children >= Sum2Children && Sum3Children >= Sum4andmoreChildren){
+			System.out.println("The most common number of children is 3.");
+		}
+		else{
+			System.out.println("The most common number of children is 4 or more.");
+		}
 		    
 	}
 }
