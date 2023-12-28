@@ -29,7 +29,7 @@ public class OneOfEachStats {
 	// run while loop until get at least one child of each gender 	
 			while(!boy || !girl){
 				children = children + 1;
-				all = all+1;
+				all = all + 1;
 	// run a random number to decide the child gender.
 				double random = generator.nextDouble();
 				if(random<0.5){
