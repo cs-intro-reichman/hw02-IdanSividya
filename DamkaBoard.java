@@ -3,7 +3,9 @@
  */
 public class DamkaBoard {
 	public static void main(String[] args) {
+		// get the size of the board as an argument  
 		int n = Integer.parseInt(args[0]);
+		// print the damka board. seperate between 3 cases. 
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
 				if(i%2==1&&j==0){
